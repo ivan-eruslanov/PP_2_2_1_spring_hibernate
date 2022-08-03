@@ -1,14 +1,11 @@
 package hiber.dao;
 
-import hiber.model.Car;
 import hiber.model.User;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
-import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -25,17 +22,17 @@ public class UserDaoImp implements UserDao {
    @Override
    @SuppressWarnings("unchecked")
    public List<User> listUsers() {
-      TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
+      TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User");
       return query.getResultList();
    }
 
    @Override
-   public User chooseUserMachine(String model, int series) {
-      Session session = sessionFactory.getCurrentSession();
-      TypedQuery<User> query = session.createQuery("from User u where u.car.model = :model and u.car.series = :series")
+   public User getUserByCar(String model, int series) {
+      TypedQuery<User> typedQuery = sessionFactory.getCurrentSession().
+              createQuery("from User u where u.car.model = :model and u.car.series = :series")
               .setParameter("model", model)
               .setParameter("series", series);
-      return query.getSingleResult();
+      return typedQuery.getSingleResult();
    }
 
 

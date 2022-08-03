@@ -17,13 +17,13 @@ public class MainApp {
       UserService userService = context.getBean(UserService.class);
 
       // Select users
-      userService.add(new User("User1", "LastName1", "user1@mail.ru",
+      userService.add(new User("Михаил", "Расторгуев", "mi.rastorguev@mail.ru",
               (new Car("vaz", 2106))));
-      userService.add(new User("User2", "LastName2", "user2@mail.ru",
+      userService.add(new User("Юрий", "Гагарин", "ur.gagarin@bk.ru",
               new Car("lada", 2113)));
-      userService.add(new User("User3", "LastName3", "user3@mail.ru",
+      userService.add(new User("Ольга", "Бузова", "ol.buzova@list.ru",
               new Car("uaz", 3306)));
-      userService.add(new User("User4", "LastName4", "user4@mail.ru",
+      userService.add(new User("Памела", "Андерсон", "pam.anderson@gmail.com",
               new Car("gaz", 2121)));
 
       List<User> users = userService.listUsers();
@@ -38,7 +38,7 @@ public class MainApp {
 
       // Search car
       System.out.println("Search:");
-      System.out.println(userService.chooseUserMachine("gaz", 2121));
+      System.out.println(userService.getUserByCar("gaz", 2121));
 
       context.close();
    }
