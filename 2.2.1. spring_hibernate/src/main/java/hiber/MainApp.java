@@ -37,7 +37,7 @@ public class MainApp {
       }
 
       // Search car
-      System.out.println("Search:");
+      System.out.println("Search user by id:");
       System.out.println(userService.getUserByCar("gaz", 2121));
 
       context.close();

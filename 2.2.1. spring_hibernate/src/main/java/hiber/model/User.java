@@ -96,12 +96,10 @@ public class User {
 
    @Override
    public String toString() {
-      return "User{" +
-              "car=" + car +
-              ", id=" + id +
-              ", firstName='" + firstName + '\'' +
-              ", lastName='" + lastName + '\'' +
-              ", email='" + email + '\'' +
-              '}';
+      return "Id = " + id
+              + "\nFirst Name = " + firstName
+              + "\nLast Name = " + lastName
+              + "\nEmail = " + email
+              + "\nCar = " + (car == null ? "chevrolet" : car.toString()) + "\n";
    }
 }
