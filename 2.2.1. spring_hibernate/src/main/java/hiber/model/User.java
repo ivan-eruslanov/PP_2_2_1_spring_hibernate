@@ -39,14 +39,6 @@ public class User {
       this.car = car;
    }
 
-   public Car getCar() {
-      return car;
-   }
-
-   public void setCar(Car car) {
-      this.car = car;
-   }
-
    public Long getId() {
       return id;
    }
@@ -79,6 +71,14 @@ public class User {
       this.email = email;
    }
 
+   public Car getCar() {
+      return car;
+   }
+
+   public void setCar(Car car) {
+      this.car = car;
+   }
+
    @Override
    public boolean equals(Object o) {
       if (this == o) return true;
@@ -96,10 +96,9 @@ public class User {
 
    @Override
    public String toString() {
-      return "Id = " + id
-              + "\nFirst Name = " + firstName
-              + "\nLast Name = " + lastName
-              + "\nEmail = " + email
-              + "\nCar = " + (car == null ? "chevrolet" : car.toString()) + "\n";
+      return "\nFirstName = " + firstName +
+              "\nLastName = " + lastName +
+              "\nEmail = " + email +
+              "\nCar = " + car;
    }
 }

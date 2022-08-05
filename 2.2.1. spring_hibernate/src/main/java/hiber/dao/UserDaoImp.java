@@ -27,6 +27,7 @@ public class UserDaoImp implements UserDao {
    }
 
    @Override
+   @SuppressWarnings("unchecked")
    public User getUserByCar(String model, int series) {
       TypedQuery<User> typedQuery = sessionFactory.getCurrentSession().
               createQuery("from User u where u.car.model = :model and u.car.series = :series")
@@ -34,6 +35,4 @@ public class UserDaoImp implements UserDao {
               .setParameter("series", series);
       return typedQuery.getSingleResult();
    }
-
-
 }
