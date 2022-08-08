@@ -17,25 +17,25 @@ public class MainApp {
       UserService userService = context.getBean(UserService.class);
 
       // Users and Cars
-      User ivan = new User("Иван", "Иванов", "iv.ivanov@mail.ru");
-      Car gaz = new Car("Gaz", 3110);
-      ivan.setCar(gaz);
-      userService.add(ivan);
+      User user1 = new User("Иван", "Иванов", "iv.ivanov@mail.ru");
+      Car car1 = new Car("Gaz", 3110);
+      user1.setCar(car1);
+      userService.add(user1);
 
-      User uri = new User("Юрий", "Петров", "ur.petrov@list.ru");
-      Car vaz = new Car("Vaz", 2106);
-      uri.setCar(vaz);
-      userService.add(uri);
+      User user2 = new User("Юрий", "Петров", "ur.petrov@list.ru");
+      Car car2 = new Car("Vaz", 2106);
+      user2.setCar(car2);
+      userService.add(user2);
 
-      User roman = new User("Роман", "Романов", "ro.romanov@bk.ru");
-      Car lada = new Car("Lada", 2114);
-      roman.setCar(lada);
-      userService.add(roman);
+      User user3 = new User("Роман", "Романов", "ro.romanov@bk.ru");
+      Car car3 = new Car("Lada", 2114);
+      user3.setCar(car3);
+      userService.add(user3);
 
-      User maks = new User("Максим", "Максимов", "m.maksimov@gmail.com");
-      Car uaz = new Car("Uaz", 3306);
-      maks.setCar(uaz);
-      userService.add(maks);
+      User user4 = new User("Максим", "Максимов", "m.maksimov@gmail.com");
+      Car car4 = new Car("Uaz", 3306);
+      user4.setCar(car4);
+      userService.add(user4);
 
       List<User> users = userService.listUsers();
       for (User user : users) {
@@ -47,9 +47,9 @@ public class MainApp {
          System.out.println();
       }
 
-      // Search car
-      User tmp = userService.getUserByCar("Lada", 2114);
-      System.out.println("Find a car by model and series." + tmp);
+      // Get user from model and series
+      User temp = userService.getUserByModelAndSeries("Lada", 2114);
+      System.out.println("Get user by model and series." + temp);
       context.close();
    }
 }

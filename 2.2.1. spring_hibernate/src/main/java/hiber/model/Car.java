@@ -56,7 +56,7 @@ public class Car {
         return user;
     }
 
-    public void setUser() {
+    public void setUser(User user) {
         this.user = user;
     }
 
