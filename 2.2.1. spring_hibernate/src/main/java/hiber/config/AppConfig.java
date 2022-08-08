@@ -2,6 +2,7 @@ package hiber.config;
 
 import hiber.model.Car;
 import hiber.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -22,8 +23,9 @@ import java.util.Properties;
 @ComponentScan(value = "hiber")
 public class AppConfig {
 
-   private Environment env;
+   private final Environment env;
 
+   @Autowired
    public AppConfig(Environment env) {
       this.env = env;
    }

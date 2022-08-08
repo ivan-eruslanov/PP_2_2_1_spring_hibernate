@@ -26,7 +26,7 @@ public class MainApp {
       userService.addUser(new User("Максим", "Максимов", "m.maksimov@gmail.com",
               (new Car("Uaz", 3306))));
 
-      List<User> users = userService.saveUsers();
+      List<User> users = userService.getUserList();
       for (User user : users) {
          System.out.println("Id = "+user.getId());
          System.out.println("First Name = "+user.getFirstName());
@@ -37,7 +37,7 @@ public class MainApp {
       }
 
       // Get user from model and series
-      User temp = userService.getUserByModelAndSeries("Lada", 2114);
+      User temp = userService.getUserByModelAndSeries("Vaz", 2106);
       System.out.println("Get user by model and series." + temp);
       context.close();
    }
