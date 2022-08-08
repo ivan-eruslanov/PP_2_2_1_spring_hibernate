@@ -90,7 +90,8 @@ public class User {
 
    @Override
    public String toString() {
-      return "\nFirstName = " + firstName +
+      return "\nId = " + id +
+              "\nFirstName = " + firstName +
               "\nLastName = " + lastName +
               "\nEmail = " + email +
               "\nCar = " + car;
